@@ -5,7 +5,7 @@ function GameCardSkeleton() {
   return (
     <GameCardContainer>
       {" "}
-      <Card.Root width="300px" borderRadius="12px" overflow="hidden">
+      <Card.Root borderRadius="12px" overflow="hidden">
         <Skeleton height="200px" />
         <Card.Body>
           <Skeleton height="20px" width="100%" />
