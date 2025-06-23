@@ -24,7 +24,10 @@ function App() {
       </GridItem>
       <Show when={useBreakpointValue({ base: false, lg: true })}>
         <GridItem area="aside" paddingX={4}>
-          <GenreList onSelectGenre={setSelectedGenre} />
+          <GenreList
+            onSelectGenre={setSelectedGenre}
+            selectedGenre={selectedGenre}
+          />
         </GridItem>
       </Show>
 
