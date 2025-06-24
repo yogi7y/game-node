@@ -6,6 +6,11 @@ export interface Platform {
   slug: string;
 }
 
-const usePlatforms = () => useData<Platform>("/platforms/lists/parents");
+const usePlatforms = () =>
+  useData<Platform>("/platforms/lists/parents", {
+    params: {
+      page_size: 100,
+    },
+  });
 
 export default usePlatforms;
