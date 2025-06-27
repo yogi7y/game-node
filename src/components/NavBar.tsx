@@ -1,24 +1,24 @@
 import logo from "../assets/game_node.png";
-import { Flex, HStack, Image, Text } from "@chakra-ui/react";
+import { Flex, Image } from "@chakra-ui/react";
 import { ColorModeButton, useColorModeValue } from "./ui/color-mode";
+import SearchInput from "./SearchInput";
 
-const NavBar = () => {
+interface NavBarProps {
+  onSearch: (searchText: string) => void;
+}
+
+const NavBar = ({ onSearch }: NavBarProps) => {
   const logoFilter = useColorModeValue("none", "invert(1)");
 
   return (
-    <Flex justify="space-between" align="center" padding={10}>
-      <HStack>
-        <Image
-          src={logo}
-          boxSize="60px"
-          filter={logoFilter}
-          transition="filter 0.2s"
-        />
-        <Text fontSize="xl" fontWeight="bold">
-          Game Node
-        </Text>
-      </HStack>
-
+    <Flex justify="space-between" align="center" padding={10} gap={4}>
+      <Image
+        src={logo}
+        boxSize="60px"
+        filter={logoFilter}
+        transition="filter 0.2s"
+      />
+      <SearchInput onSearch={onSearch} />
       <ColorModeButton />
     </Flex>
   );
